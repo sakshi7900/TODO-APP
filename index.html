@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Whisper&display=swap" rel="stylesheet">
+    <title>Todo App</title>
+</head>
+<body>
+    <div class="todoApp">
+
+        <div id="box"></div>
+        <div class="app">
+        <h1>Todo App !</h1>
+        <form id="taskForm">
+            <label for="title">Title:</label>
+            <input type="text" id="title" required>
+            <label for="description">Description:</label>
+            <textarea id="description"></textarea>
+            <label for="dueDate">Due Date:</label>
+            <input type="date" id="dueDate">
+            <label for="priority">Priority:</label>
+            <select id="priority">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+            <button type="button" onclick="addTask()">Add Task</button>
+        </form>
+
+        <div id="taskList" class="task-list"></div>
+
+        <div class="controls">
+            <button onclick="undo()">Undo</button>
+            <button onclick="redo()">Redo</button>
+            <label>Show: </label>
+            <select id="filter" onchange="applyFilters()">
+                <option value="all">All</option>
+                <option value="completed">Completed</option>
+                <option value="notCompleted">Not Completed</option>
+            </select>
+        </div>
+    </div>
+    
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
